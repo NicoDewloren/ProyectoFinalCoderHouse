@@ -1,0 +1,21 @@
+.header {
+  grid-area: header;
+  @include flexStart(column);
+  background-image: linear-gradient(to top, $primary-color, $secondary-color);
+
+  .nav__logo {
+    width: 85px;
+    height: 85px;
+    align-self: center;
+    margin-bottom: 1rem;
+    margin-top: 0.4rem;
+  }
+
+  .header ul li {
+    text-align: center;
+    list-style-type: none;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+  }
+}

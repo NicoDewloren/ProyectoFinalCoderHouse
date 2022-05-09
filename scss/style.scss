@@ -1,0 +1,871 @@
+@import "reset";
+
+@import "colores";
+@import "mixins";
+@import "variables";
+
+@import "header";
+@import "footer";
+
+/* GRID */
+
+.layout {
+  display: grid;
+  flex-direction: column;
+  grid-template-columns: auto 1fr 1fr auto;
+  grid-template-rows: 1fr;
+  grid-template-areas:
+    "header"
+    "main"
+    "section"
+    "footer";
+  background-color: $primary-color;
+}
+
+body {
+  header,
+  footer {
+    background-color: $primary-color;
+    max-width: 100%;
+    color: $primary-color;
+  }
+
+  main,
+  section,
+  article {
+    background-color: $primary-color;
+    max-width: 100%;
+  }
+
+  img,
+  svg {
+    width: 100%;
+    vertical-align: middle;
+  }
+}
+
+.hero {
+  grid-area: main;
+  @include flexCenter(column);
+  background-color: $secondary-color;
+  color: $tertiary-color;
+  border-radius: 20px;
+  margin: 1rem;
+  padding: 0.8rem;
+  gap: 2rem;
+  overflow: hidden;
+
+  .hero__section {
+    background-color: $secondary-color;
+  }
+  .hero__title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .hero__text {
+    font-size: 1rem;
+    text-align: center;
+  }
+  .hero__img {
+    max-width: 100%;
+  }
+}
+
+.info {
+  grid-area: section;
+  @include flexCenter(column);
+  margin: 1rem 0.5rem;
+  padding: 0.8rem;
+  gap: 2rem;
+
+  .info__card {
+    padding: 1.5rem;
+    text-align: center;
+    background-color: $secondary-color;
+    color: $tertiary-color;
+    gap: 2rem;
+    border-radius: 25px;
+  }
+  .info__card img {
+    width: 50px;
+  }
+
+  .info__card h2 {
+    font-size: 1.7rem;
+  }
+
+  .info__card p {
+    font-size: 1rem;
+    margin-top: 0.3rem;
+  }
+}
+
+/*  MEDIAS MEDIAS INDEX */
+
+@media (min-width: 768px) {
+  .layout {
+    display: grid;
+    flex-direction: row;
+    grid-template-columns: auto 1fr 1fr auto;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "header"
+      "main "
+      "section"
+      "footer ";
+  }
+
+  body {
+    main,
+    section,
+    article,
+    div {
+      max-width: 90%;
+    }
+  }
+
+  .header {
+    grid-area: header;
+    @include flexStart(column);
+    row-gap: 2rem;
+
+    .header ul li {
+      display: inline-block;
+      list-style-type: none;
+      text-transform: uppercase;
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-size: 1rem;
+    }
+  }
+  .hero {
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #e8eddf;
+    border-radius: 20px;
+    margin: 2rem 0 2rem 3rem;
+    padding: 0.8rem;
+    overflow: hidden;
+  }
+  .info {
+    grid-area: section;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem 0 1rem 3rem;
+    padding: 0.8rem;
+    gap: 3rem;
+  }
+}
+
+@media (min-width: 991px) {
+  /* GRID */ /* GRID */
+
+  .layout {
+    display: grid;
+    grid-template-columns: auto 1fr 1fr auto;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      "header header header"
+      "main main main"
+      "section section section"
+      "footer footer footer ";
+  }
+
+  .header {
+    grid-area: header;
+    @include flexCenter(row);
+    background-color: $secondary-color;
+    row-gap: 2rem;
+
+    ul li {
+      display: inline-block;
+      list-style-type: none;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: $tertiary-color;
+      margin-bottom: 0.5rem;
+      margin-left: 1.5rem;
+      font-size: 1.3rem;
+    }
+
+    .nav__logo {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 1.5rem;
+      margin-top: 1rem;
+    }
+  }
+
+  .hero {
+    grid-area: main;
+    @include flexCenter(row);
+    background-color: $secondary-color;
+    color: $tertiary-color;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 3rem 0 3rem 4rem;
+
+    .hero__section {
+      background-color: $secondary-color;
+    }
+    .hero__title {
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .hero__img {
+      max-width: 100%;
+      width: 50vh;
+    }
+    .hero__text {
+      font-size: 1.2rem;
+      text-align: center;
+    }
+  }
+
+  .info {
+    grid-area: section;
+    @include flexCenter(row);
+    margin: 1rem 1rem 1rem 4.5rem;
+    padding: 0.8rem;
+    gap: 5rem;
+
+    .info__card {
+      padding: 1rem;
+      text-align: center;
+      background-color: $secondary-color;
+      color: $tertiary-color;
+      gap: 2rem;
+      border-radius: 25px;
+    }
+
+    .info__card h2 {
+      font-size: 1.5rem;
+    }
+
+    .info__card p {
+      font-size: 1rem;
+      margin-top: 0.3rem;
+    }
+  }
+
+  .footer {
+    grid-area: footer;
+    background-color: $secondary-color;
+    @include flexCenter(column);
+    font-size: 0.8rem;
+
+    .redes__icon {
+      width: 35px;
+      height: 35px;
+    }
+  }
+}
+
+/* ///////////// CONTACTO //////////////////// */
+
+main {
+  grid-area: main;
+}
+.hero__contact {
+  @include flexCenter(column);
+  background-color: $secondary-color;
+  color: $tertiary-color;
+  border-radius: 25px;
+  overflow: hidden;
+  margin: 1rem 0.5rem 1rem 0.5rem;
+
+  h3 {
+    font-size: 1.2rem;
+    margin: 1rem 1rem 1rem 1rem;
+    color: $tertiary-color;
+    align-self: center;
+  }
+
+  .contact {
+    background-color: $secondary-color;
+    text-align: center;
+    margin: 1rem 1rem;
+    padding: 1rem 1rem;
+    color: $tertiary-color;
+    border-radius: 25px;
+  }
+}
+
+.contact__section {
+  grid-area: section;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 1rem 0.5rem 1rem 0.5rem;
+  color: $tertiary-color;
+  overflow: hidden;
+
+  .contact__card {
+    width: 100vh;
+    min-height: 20vh;
+    background-color: $secondary-color;
+    gap: 1rem;
+    border-radius: 25px;
+    padding: 1rem 0 1rem 0.5rem;
+    align-self: flex-start;
+    margin-top: 1rem;
+  }
+
+  .contact__title {
+    color: $tertiary-color;
+    font-size: 2rem;
+    text-decoration: underline;
+    text-align: center;
+    padding-bottom: 1rem;
+  }
+
+  .contact__text {
+    color: $tertiary-color;
+    font-size: 1rem;
+  }
+}
+
+/* MEDIAS CONTACTO */
+
+@media (min-width: 768px) {
+  main {
+    .hero__contact {
+      grid-area: main;
+      @include flexCenter(column);
+      background-color: $secondary-color;
+      color: $tertiary-color;
+      border-radius: 25px;
+      overflow: hidden;
+      margin: 1rem 0.5rem 1rem 2.5rem;
+      justify-content: space-between;
+    }
+  }
+}
+
+section {
+  .contact__section {
+    grid-area: section;
+    @include flexCenter(row);
+    margin: 2rem 0rem 0rem 15rem;
+    color: $tertiary-color;
+    overflow: hidden;
+    gap: 2rem;
+  }
+}
+
+@media (min-width: 991px) {
+  main {
+    .hero__contact {
+      grid-area: main;
+      @include flexCenter(row);
+      background-color: $secondary-color;
+      color: $tertiary-color;
+      border-radius: 25px;
+      overflow: hidden;
+      margin: 1rem 0.5rem 2rem 5rem;
+
+      .hero__contact h3 {
+        font-size: 1.2rem;
+        margin: 1rem 1rem 1rem 1rem;
+        color: $tertiary-color;
+        align-self: center;
+      }
+
+      .contact {
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  .contact__section {
+    grid-area: section;
+    @include flexCenter(row);
+    margin: 2rem 0rem 0rem 5rem;
+    color: $tertiary-color;
+    gap: 2rem;
+    flex-wrap: nowrap;
+
+    .form input,
+    textarea {
+      font-size: 1.5rem;
+    }
+
+    .contact__title {
+      font-size: 1.5rem;
+    }
+
+    .contact__text {
+      font-size: 1rem;
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
+    }
+  }
+}
+
+/*  PERROS PERROS  */
+
+.dog__hero {
+  grid-area: main;
+  background-color: $secondary-color;
+  margin: 2rem 0.5rem 1rem 0.5rem;
+  border-radius: 20px;
+  color: $tertiary-color;
+
+  .dog__title {
+    font-size: 2rem;
+    text-align: center;
+    margin: 1rem 0.2rem 1rem 0.2rem;
+  }
+  .dog__text {
+    font-size: 1rem;
+    text-align: center;
+    margin: 0 0.2rem 1rem 0.2rem;
+  }
+}
+
+.dog__products {
+  grid-area: section;
+  .product__card {
+    @include flexCenter(column);
+    background-color: $secondary-color;
+    color: $tertiary-color;
+    border-radius: 20px;
+    margin: 2rem 0.5rem 1rem 0.5rem;
+    align-items: center;
+  }
+  .product__img {
+    width: 50%;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .product__title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .product__text {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .product__btn {
+    margin: 0.5rem;
+    background-color: map-get($boton, color);
+    border-radius: map-get($boton, borde);
+    padding: map-get($boton, espacio);
+    font-size: map-get($boton, fuente);
+  }
+}
+
+/* MEDIAS PERROS */
+
+@media (min-width: 768px) {
+  .dog__hero {
+    grid-area: main;
+    @include flexCenter(column);
+    background-color: $secondary-color;
+    margin: 2rem 0.5rem 1rem 0.5rem;
+    border-radius: 20px;
+    color: $tertiary-color;
+
+    .dog__title {
+      font-size: 2rem;
+      text-align: center;
+      margin: 1rem 0.2rem 1rem 0.2rem;
+    }
+    .dog__text {
+      font-size: 1rem;
+      text-align: center;
+      margin: 0 0.2rem 1rem 0.2rem;
+    }
+  }
+}
+
+.dog__products {
+  grid-area: section;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .product__card {
+    max-width: 300px;
+  }
+  .product__img {
+    width: 50%;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .product__text {
+    font-size: 1rem;
+    margin: 0.5rem;
+    text-align: center;
+  }
+}
+
+@media (min-width: 991px) {
+  .dog__hero {
+    grid-area: main;
+    @include flexCenter(column);
+    background-color: $secondary-color;
+    margin: 1rem 0.5rem 1rem 0.5rem;
+    border-radius: 20px;
+    color: $tertiary-color;
+  }
+
+  .dog__title {
+    font-size: 1rem;
+    text-align: center;
+    margin: 1rem 0.2rem 1rem 0.2rem;
+  }
+  .dog__text {
+    font-size: 1rem;
+    text-align: center;
+    margin: 0 0.2rem 1rem 0.2rem;
+  }
+}
+
+.dog__products {
+  grid-area: section;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .product__card {
+    max-width: 400px;
+    margin: 2rem;
+  }
+  .product__img {
+    width: 40%;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  .product__title {
+    font-size: 1.5rem;
+  }
+  .product__text {
+    font-size: 1rem;
+    margin: 0.5rem;
+    text-align: center;
+  }
+
+  .product__btn {
+    margin: 1rem 0 2rem 0;
+    background-color: map-get($boton, color);
+    border-radius: map-get($boton, border);
+    padding: map-get($boton, espacio);
+    font-size: map-get($boton, fuente);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s;
+
+    &:hover {
+      color: white;
+      transform: scale(1.1, 1.1);
+      background-color: rgb(30, 216, 223);
+    }
+  }
+}
+
+/* GATOS GATOS */
+
+.cat__hero {
+  grid-area: main;
+  background-color: $secondary-color;
+  margin: 2rem 0.5rem 1rem 0.5rem;
+  border-radius: 20px;
+  color: $tertiary-color;
+  .cat__title {
+    font-size: 2rem;
+    text-align: center;
+    margin: 1rem 0.2rem 1rem 0.2rem;
+  }
+  .cat__text {
+    font-size: 1rem;
+    text-align: center;
+    margin: 0 0.2rem 1rem 0.2rem;
+  }
+}
+
+.cat__products {
+  grid-area: section;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .product__card {
+    @include flexCenter(column);
+    background-color: $secondary-color;
+    color: $tertiary-color;
+    border-radius: 20px;
+    margin: 2rem 0.5rem 1rem 0.5rem;
+  }
+  .product__img {
+    width: 50%;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .product__title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .product__text {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .product__btn {
+    margin: 0.5rem;
+    background-color: $primary-color;
+    border-radius: 25px;
+    padding: 1rem;
+    font-size: 1rem;
+  }
+}
+
+/* MEDIAS gatos */
+
+@media (min-width: 768px) {
+  .cat__hero {
+    grid-area: main;
+    @include flexCenter(column);
+    background-color: $secondary-color;
+    margin: 2rem 0.5rem 1rem 0.5rem;
+    border-radius: 20px;
+    color: $tertiary-color;
+
+    .cat__title {
+      font-size: 2rem;
+      text-align: center;
+      margin: 1rem 0.2rem 1rem 0.2rem;
+    }
+    .cat__text {
+      font-size: 1rem;
+      text-align: center;
+      margin: 0 0.2rem 1rem 0.2rem;
+    }
+  }
+}
+
+.cat__products {
+  grid-area: section;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  .product__card {
+    max-width: 300px;
+  }
+  .product__img {
+    width: 50%;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .product__text {
+    font-size: 1rem;
+    margin: 0.5rem;
+    text-align: center;
+  }
+}
+
+@media (min-width: 991px) {
+  .cat__hero {
+    grid-area: main;
+    @include flexCenter(column);
+    background-color: $secondary-color;
+    margin: 2rem 0.5rem 1rem 0.5rem;
+    border-radius: 20px;
+    color: $tertiary-color;
+
+    .cat__title {
+      font-size: 2rem;
+      text-align: center;
+      margin: 1rem 0.2rem 1rem 0.2rem;
+    }
+    .cat__text {
+      font-size: 1rem;
+      text-align: center;
+      margin: 0 0.2rem 1rem 0.2rem;
+    }
+  }
+}
+
+.cat__products {
+  grid-area: section;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .product__card {
+    max-width: 400px;
+    margin: 2rem;
+
+    .product__img {
+      width: 40%;
+      margin-bottom: 0.5rem;
+      margin-top: 0.5rem;
+    }
+    .product__title {
+      font-size: 1.5rem;
+    }
+    .product__text {
+      font-size: 1rem;
+      margin: 0.5rem;
+      text-align: center;
+    }
+
+    .product__btn {
+      margin: 1rem 0 2rem 0;
+      background-color: map-get($map: $boton, $key: color);
+      border-radius: map-get($boton, border);
+      padding: map-get($boton, espacio);
+      font-size: map-get($boton, fuente);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.5s;
+
+      &:hover {
+        color: white;
+        transform: scale(1.1, 1.1);
+        background-color: rgb(30, 216, 223);
+      }
+    }
+  }
+}
+
+/* FAQ FAQ FAQ FAQ */
+
+.faq__nosotros {
+  grid-area: main;
+  background-color: $secondary-color;
+  @include flexCenter(column);
+  margin-bottom: 2rem;
+
+  border-radius: 20px;
+}
+
+.faq__title {
+  font-size: 2rem;
+  margin: 0.5rem;
+  color: $tertiary-color;
+}
+
+.faq__text {
+  font-size: 1rem;
+  padding: 0 1rem 1rem 1rem;
+  color: $tertiary-color;
+}
+
+.faq__info {
+  grid-area: section;
+
+  .faq__card {
+    background-color: $secondary-color;
+    @include flexCenter(column);
+
+    border-radius: 20px;
+
+    .faq__card-title2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.2rem;
+      color: $tertiary-color;
+      padding: 1rem;
+      align-self: flex-start;
+    }
+
+    .faq__card-text {
+      font-size: 1rem;
+      padding: 0 0.5rem 0.8rem 0.5rem;
+      color: $tertiary-color;
+    }
+  }
+}
+/* MEDIAS FAQ */
+@media (min-width: 768px) {
+  .faq__title {
+    font-size: 3rem;
+    margin: 0.5rem;
+    color: $tertiary-color;
+  }
+  .faq__text {
+    font-size: 1.5rem;
+    padding: 0 1rem 1rem 1rem;
+    color: $tertiary-color;
+  }
+
+  .faq__card {
+    background-color: $secondary-color;
+    @include flexCenter(column);
+    margin: 2rem 1rem 2rem 1rem;
+    border-radius: 20px;
+  }
+
+  .faq__card-title {
+    font-size: 1.7rem;
+    margin-bottom: 0.2rem;
+    color: $tertiary-color;
+  }
+
+  .faq__card-text {
+    font-size: 1rem;
+    padding: 0 0.5rem 0.8rem 0.5rem;
+    color: $tertiary-color;
+  }
+}
+
+@media (min-width: 991px) {
+  .faq__title {
+    font-size: 2rem;
+    margin: 0.5rem;
+    color: $tertiary-color;
+  }
+  .faq__text {
+    font-size: 1rem;
+    padding: 0 1rem 1rem 1rem;
+    color: $tertiary-color;
+  }
+
+  .faq__card {
+    background-color: $secondary-color;
+    @include flexCenter(column);
+    margin: auto;
+    border-radius: 20px;
+    margin: 2rem 1rem 2rem 1rem;
+
+    .faq__card-text {
+      font-size: 1rem;
+      padding: 0 0.5rem 0.8rem 0.5rem;
+      color: $tertiary-color;
+    }
+
+    .faq__card-title2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.2rem;
+      color: $tertiary-color;
+      padding: 1rem;
+      align-self: flex-start;
+    }
+  }
+
+  .faq__card-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.2rem;
+    color: $tertiary-color;
+  }
+}
