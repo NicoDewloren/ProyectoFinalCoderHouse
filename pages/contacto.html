@@ -64,7 +64,10 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="../index.html"
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="../index.html"
                   >Inicio</a
                 >
               </li>
@@ -100,106 +103,122 @@
       </nav>
     </header>
     <!-- SECTION SECTION SECTION main main  -->
-    <main class="hero__contact  container">
-      <h3>Rellena el formulario indicando el producto de tu interés o las dudas, a la brevedad nuestro equipo se pondrá en contacto con vos.</h3>
-       <form class="contact" action="">
-         <div class="form">
-            <label class="form__items" for="Nombre">Nombre</label>
-            <input type="text" name="Nombre" id="Nombre" />
-            <br />
-            <label class="form__items" for="Apellido">Apellido</label>
-            <input type="text" name="Apellido" id="Apellido" />
-            <br />
-            <label class="form__items" for="Email">Email</label>
-            <input type="text" name="Email" id="Email" required />
-            <br />
-            <label class="form__items" for="Apellido">Telefono</label>
-            <input type="text" name="Telefono" id="Telefono"  />
-            <div>Me gustaria recibir noticias sobre productos y promociones de Neki</div>
-            <input 
-              type="checkbox"
-              name="Quiere recibir ofertas"
-              value="1"
-              required
-            />
-            <br />
-            <label class="form__items" for="interes en productos"></label>
-              ¿En cuál de nuestros productos estas interesad@?
-            </label>
-            <br />
-            <textarea class="form__items"
-              name="¿En que producto estas interesad@?"
-              id="¿En que producto estas interesad@?"
-              cols="25"
-              rows="8"
-            ></textarea>
-            <br />
-            <input type="submit" value="Enviar" />
-            <input type="reset" name="Limpiar formulario" id="" />
-          </div> 
+    <main class="hero__contact container">
+      <h3>
+        Rellena el formulario indicando el producto de tu interés o las dudas, a
+        la brevedad nuestro equipo se pondrá en contacto con vos.
+      </h3>
+      <form>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Nombre</label>
+          <input
+            type="email"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Apellido</label>
+          <input
+            type="email"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Telefono</label>
+          <input
+            type="email"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+          />
+        </div>
+
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+          <label class="form-check-label" for="exampleCheck1"
+            >Me gustaria recibir promociones de Neki</label
+          >
+        </div>
+        <button type="submit" class="btn btn-primary mb-4">Enviar</button>
       </form>
     </main>
-    <section class="contact__section  container">
-        <article class="contact__card">
-          <h3 class="contact__title">Telefonos</h3>
-          <p class="contact__text">
+    <section class="contact__section container">
+      <article class="contact__card">
+        <h3 class="contact__title">Telefonos</h3>
+        <p class="contact__text">
           +54 11 2445-3415
-          <br>
+          <br />
           +54 11 2653-3513
-          <br>
+          <br />
           +54 11 2851-2591
-          </p>
-        </article>
-       <article class="contact__card">
-          <h3 class="contact__title">Email</h3>
-          <p class="contact__text">
-          neki.petshop@gmail.com 
-          <br>
+        </p>
+      </article>
+      <article class="contact__card">
+        <h3 class="contact__title">Email</h3>
+        <p class="contact__text">
+          neki.petshop@gmail.com
+          <br />
           neki.accesorios@gmail.com
-          </p>
-        </article>
-       <article class="contact__card">
+        </p>
+      </article>
+      <article class="contact__card">
         <h3 class="contact__title">Ubicacion</h3>
         <p class="contact__text">
-        Weizman 605, Moron. Buenos Aires.
-        <br>
-        Casares 205, Bella Vista. Buenos Aires
-        <br>
-        Orlando 701, CABA. Buenos Aires
-        <br>
-        Casique 904, Lanus. Buenos Aires
+          Weizman 605, Moron. Buenos Aires.
+          <br />
+          Casares 205, Bella Vista. Buenos Aires
+          <br />
+          Orlando 701, CABA. Buenos Aires
+          <br />
+          Casique 904, Lanus. Buenos Aires
         </p>
       </article>
     </section>
-  <!-- footer FOOTER -->
-  <footer class="footer">
-    <div>Redes Sociales</div>
-    <div>
-      <a target="__blank" href="http://www.instagram.com/accesorios.neki"
-        ><img
-          class="redes__icon"
-          src="../imgs/instagram (1).png"
-          alt="Instagram"
-      /></a>
-      <a target="__blank" href="http://www.facebook.com/accesorios.neki"
-        ><img class="redes__icon" src="../imgs/facebook (1).png" alt="Facebook"
-      /></a>
-      <a target="__blank" href="http://www.youtube.com/accesorios.neki"
-        ><img class="redes__icon" src="../imgs/youtube.png" alt="Youtube"
-      /></a>
-    </div>
-    <div>
-      Creado por
-      <a target="_blank" href="http://www.instagram.com/niico.pereyra"
-        ><span class="dev__name">Nicolas Pereyra</span></a
-      >
-    </div>
-  </footer>
-  <!-- bs js bs js -->
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-    crossorigin="anonymous"
-  ></script>
-</body>
+    <!-- footer FOOTER -->
+    <footer class="footer">
+      <div>Redes Sociales</div>
+      <div>
+        <a target="__blank" href="http://www.instagram.com/accesorios.neki"
+          ><img
+            class="redes__icon"
+            src="../imgs/instagram (1).png"
+            alt="Instagram"
+        /></a>
+        <a target="__blank" href="http://www.facebook.com/accesorios.neki"
+          ><img
+            class="redes__icon"
+            src="../imgs/facebook (1).png"
+            alt="Facebook"
+        /></a>
+        <a target="__blank" href="http://www.youtube.com/accesorios.neki"
+          ><img class="redes__icon" src="../imgs/youtube.png" alt="Youtube"
+        /></a>
+      </div>
+      <div>
+        Creado por
+        <a target="_blank" href="http://www.instagram.com/niico.pereyra"
+          ><span class="dev__name">Nicolas Pereyra</span></a
+        >
+      </div>
+    </footer>
+    <!-- bs js bs js -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
