@@ -814,6 +814,7 @@ section {
     @include flexCenter(column);
     margin: 2rem 1rem 2rem 1rem;
     border-radius: 20px;
+    padding: 1rem;
   }
 
   .faq__card-title {
@@ -832,7 +833,7 @@ section {
 @media (min-width: 991px) {
   .faq__title {
     font-size: 2rem;
-    margin: 0.5rem;
+    margin: 1rem 0 2rem 0;
     color: $tertiary-color;
   }
   .faq__text {
@@ -847,6 +848,7 @@ section {
     margin: auto;
     border-radius: 20px;
     margin: 2rem 1rem 2rem 1rem;
+    padding: 1rem;
 
     .faq__card-text {
       font-size: 1rem;
@@ -856,7 +858,7 @@ section {
 
     .faq__card-title2 {
       font-size: 1.5rem;
-      margin-bottom: 0.2rem;
+      margin-bottom: 2rem;
       color: $tertiary-color;
       padding: 1rem;
       align-self: flex-start;
